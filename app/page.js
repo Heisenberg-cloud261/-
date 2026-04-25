@@ -13,7 +13,7 @@ export default function Home() {
       body: JSON.stringify({ product, audience, style })
     });
     const data = await res.json();
-    setResult(data.text);
+    setResult(data.result);
   };
 
   return (
