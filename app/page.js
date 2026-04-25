@@ -10,8 +10,12 @@ export default function Home() {
   const generate = async () => {
     const res = await fetch("/api/generate", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ product, audience, style })
     });
+
     const data = await res.json();
     setResult(data.result);
   };
